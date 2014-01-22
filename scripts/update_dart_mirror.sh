@@ -1,10 +1,11 @@
-OLD_VERSION="/opt/DartDownload/VERSION"
-NEW_VERSION="/opt/VERSION"
-rm -f $NEW_VERSION
-wget -nH --cut-dirs=2 http://gsdview.appspot.com/dart-editor-archive-integration/latest/VERSION -P /opt
-diff -q $NEW_VERSION $OLD_VERSION
-if [ $? -ne 0 ]; then
-  echo 'find new version'
-  sleep 300
-  wget  -r -l1 --no-parent -w 1 --limit-rate=800k -nH --cut-dirs=2 --convert-links --backup-converted http://gsdview.appspot.com/dart-editor-archive-integration/latest/ -P /opt/DartDownload 
-fi
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-x64.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-windows-ia32.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-macos-x64.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-x64.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/editor/darteditor-linux-ia32.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/api-docs/dart-api-docs.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-macos-x64-release.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-ia32-release.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-windows-ia32-release.zip
+wget -q -N -P /opt/DartDownload http://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-windows-x64-release.zip  
